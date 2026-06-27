@@ -19,22 +19,21 @@ The goal of this project is to learn how to build stateful AI workflows using La
 
 ## Setup Instructions
 
-Clone the repository:
-
 ```bash
 git clone https://github.com/sunilbmnag1/langgraph.git
-cd Langgraph
+cd langgraph
 
 Create virtual environment:
+```bash
 python3 -m venv myenv
 
 Activate environment:
+```bash
 source myenv/bin/activate
 
-##
-This project uses OpenAI API.
-Create a `.env` file in the project root directory.
-
+Environment Variables
+This project uses the OpenAI API.
+Create a .env file in the root directory of the project.
 Add the following:
-```env
-OPENAI_API_KEY=your_openai_api_key_here
+
+OPENAI_API_KEY=<your_openai_api_key_here>
