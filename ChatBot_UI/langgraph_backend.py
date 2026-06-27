@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph, START, END
 from typing import TypedDict, Annotated
-from langchain_core.messages import BaseMessage
+from langchain_core.messages import BaseMessage, HumanMessage
 from langchain_openai import ChatOpenAI
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.graph.message import add_messages
@@ -27,3 +27,18 @@ graph.add_edge(START, "chat_node")
 graph.add_edge("chat_node", END)
 
 chatbot = graph.compile(checkpointer=checkpointer)
+
+
+# New Code
+
+# chatbot_stream  = chatbot.stream(
+#     {'messages': [HumanMessage(content='What is the recipe to make pasta')]},
+#     config = {'configurable': {'thread_id': 'thread-1'}},
+#     stream_mode= 'messages'
+# )
+
+# print(type(chatbot_stream))
+
+# for message_chunk, metadata in chatbot_stream:
+#     if message_chunk.content:
+#         print(message_chunk.content, end=" ", flush=True)
